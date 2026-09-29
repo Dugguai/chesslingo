@@ -1,0 +1,118 @@
+.oscar { display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
+.oscar-md { max-width: 320px; }
+
+.oscar-avatar-wrap { position: relative; }
+
+.speech-bubble {
+  background: white;
+  border: 3px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  animation: bubbleIn 0.3s ease;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 30px;
+  width: 0; height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid white;
+  filter: drop-shadow(0 3px 0 #e5e5e5);
+}
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.speech-bubble-text {
+  font-size: 15px;
+  color: #3c3c3c;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.speech-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.bubble-btn {
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  transition: background 0.15s;
+}
+.bubble-btn:hover { background: #e0e0e0; }
+
+.oscar-avatar {
+  width: 110px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.oscar-avatar.bounce { animation: bounce 0.6s infinite alternate; }
+@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+
+.oscar-head {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd89b, #ffb347);
+  border: 4px solid #d68a2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.oscar-face { font-size: 44px; line-height: 1; }
+
+.oscar-body {
+  width: 90px;
+  height: 55px;
+  margin-top: -12px;
+  background: linear-gradient(135deg, #1cb0f6, #1899d6);
+  border-radius: 20px 20px 30px 30px;
+  border: 4px solid #0d6ea3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.oscar-badge { font-size: 26px; }
+
+.oscar-name {
+  font-weight: 800;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.oscar-thinking .oscar-face,
+.oscar-hint .oscar-face { animation: sway 1.2s infinite alternate; }
+@keyframes sway { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
+
+.oscar-celebrating .oscar-avatar {
+  animation: celebrate 0.6s infinite alternate;
+}
+@keyframes celebrate {
+  from { transform: scale(1) rotate(-3deg); }
+  to { transform: scale(1.08) rotate(3deg); }
+}
+
+.oscar-happy .oscar-head { border-color: var(--green); }
+.oscar-sad .oscar-head { border-color: #ff4b4b; }
+.oscar-celebrating .oscar-head { border-color: var(--yellow); }
