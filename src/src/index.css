@@ -1,0 +1,61 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+:root {
+  --green: #58cc02;
+  --green-dark: #46a302;
+  --blue: #1cb0f6;
+  --blue-dark: #1899d6;
+  --orange: #ff9600;
+  --purple: #ce82ff;
+  --red: #ff4b4b;
+  --yellow: #ffc800;
+  --gray: #e5e5e5;
+  --text: #3c3c3c;
+  --text-light: #777;
+  --bg: #f7f7f7;
+}
+
+body { background: var(--bg); color: var(--text); min-height: 100vh; }
+
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+a { text-decoration: none; color: inherit; }
+
+/* Common button */
+.btn-3d {
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 15px;
+  color: white;
+  transition: transform 0.1s, box-shadow 0.1s;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.btn-3d:active { transform: translateY(3px); box-shadow: none !important; }
+
+.btn-green { background: var(--green); box-shadow: 0 4px 0 var(--green-dark); }
+.btn-blue { background: var(--blue); box-shadow: 0 4px 0 var(--blue-dark); }
+.btn-orange { background: var(--orange); box-shadow: 0 4px 0 #cc7800; }
+.btn-gray { background: #e5e5e5; color: #888; box-shadow: 0 4px 0 #cfcfcf; }
+
+/* Card */
+.card {
+  background: white;
+  border: 2px solid var(--gray);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Progress bar */
+.progress-track {
+  background: var(--gray);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 14px;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.4s ease;
+}
